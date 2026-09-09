@@ -1,0 +1,52 @@
+{
+  "skill": "jiaoyuan",
+  "version": "1.0.0",
+  "source_book": "《毛泽东选集》（1-7卷合集，3246页原著） — 毛泽东",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "教员，我最近在团队管理上遇到了极大的瓶颈，几个核心老员工各怀心思、私下抱怨，新招的员工执行力很差，我每天从早到晚忙着到处救火，感觉整个队伍快散架了。请帮我解剖一下这个局，我到底该怎么做？",
+      "expected_behavior": "应激活 jiaoyuan 技能，以教员视角切入，运用《党委会的工作方法》班长与弹钢琴艺术、解剖麻雀调研及抓主要矛盾展开结构化点拨",
+      "notes": "显式呼唤'教员'，涵盖团队治理与内耗破局"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我们是一家刚起步的硬件初创小微企业，巨头突然入场并扬言在半年内用低价把我们挤死。面对这种绝对实力的悬殊差距，如何用毛选思想的以弱胜强和持久战战略来制定破局方案？",
+      "expected_behavior": "应激活 jiaoyuan 技能，运用《论持久战》三阶段演进、《集中优势兵力，各个歼灭敌人》以及根据地与非对称破局法则指导",
+      "notes": "明确指定毛选思想与非对称战略破局"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "教员，行业大环境持续下行，身边的朋友创业接连破产，我陷入了极度的迷茫和焦虑，每天都在怀疑坚持还有没有意义，请问我该如何守住战略定力？",
+      "expected_behavior": "应激活 jiaoyuan 技能，以《星星之火，可以燎原》的历史级革命乐观主义与内因外因辩证法，给予心力赋能与长周期推演",
+      "notes": "显式呼唤'教员'，逆境商数与战略定力赋能"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "请用 TypeScript 编写一个防抖函数（debounce），要求支持 immediate 参数和 cancel 方法，并附带单元测试。",
+      "expected_behavior": "不应激活 jiaoyuan 技能，因为这是纯前端工具函数编码任务，无战略博弈与决策诉求",
+      "notes": "纯代码编写负向诱饵"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我在考科目三，驾校分给我的那个实操教员脾气非常暴躁，经常对我大吼大叫，我想向驾校投诉或者申请更换教员，请帮我起草一份客观礼貌的申请书。",
+      "expected_behavior": "不应激活 jiaoyuan 技能，虽然包含'教员'一词，但属于日常生活驾校教练事务，非战略心智操作系统",
+      "notes": "日常同音名词'驾校教员'歧义负向诱饵"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "请帮我考证一下《毛泽东选集》第一卷是在哪一年由人民出版社正式出版的？包含哪些主要文章？",
+      "expected_behavior": "不应进入深度战略顾问模式（或仅作为客观史实简答），因为属于纯版本学与出版史信息查询",
+      "notes": "纯出版史考证边缘测试"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "包含 3 条正向高价值场景（显式呼唤教员/毛选思想）、2 条强排他负向诱饵（纯代码/驾校教员歧义）与 1 条出版史边缘测试。"
+}
