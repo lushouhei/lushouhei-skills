@@ -1,13 +1,28 @@
 timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
-2026-07-08T12:00:00Z	auto	feishu-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
-2026-07-08T12:00:00Z	auto	fengtang-perspective	70	90	keep	cluster	Automated Phase 2	dry_run
-2026-07-08T12:00:00Z	auto	finance-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
-2026-07-08T12:00:00Z	auto	kaogong-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
-2026-07-08T12:00:00Z	auto	metallurgy-cad-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
-2026-07-08T12:00:00Z	auto	ai-alignment-squad	70	90	keep	cluster	Automated Phase 2	dry_run
-2026-07-08T12:00:00Z	auto	creator-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
-2026-07-08T12:00:00Z	auto	crossplatform-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
-2026-07-08T12:00:00Z	auto	darwin-skill	70	90	keep	cluster	Automated Phase 2	dry_run
-2026-07-08T12:00:00Z	auto	family-wealth-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
-2026-07-17T11:49:00Z	auto	cangjie-skill	74	90	keep	cluster	Automated Phase 2	dry_run
+2026-06-19T06:31	baseline	lushouhei-writer	-	80.2	baseline	-	初始评估(改名+换人设后)	dry_run
+2026-06-19T06:31	filebak	lushouhei-writer	80.2	83.2	keep	检查点设计(dim4)	新增2处🔴CHECKPOINT+🛑STOP分支	dry_run
+2026-06-20T11:28	baseline	finance-master-skill	-	60.3	baseline	-	初始评估	dry_run
+2026-06-20T11:28	filebak	finance-master-skill	60.3	72.7	keep	dim1+dim3+dim6	补触发词+if-then速查表+链接9个参考文件	dry_run
+2026-06-20T11:36	baseline	huashu-nuwa	-	84.2	baseline	-	初始评估(已高度成熟)	dry_run
+2026-06-20T11:36	filebak	huashu-nuwa	84.2	86.0	keep	检查点设计(dim4)	4处文字检查点升级为🔴CHECKPOINT🛑STOP视觉标记	dry_run
+2026-06-20T11:43	baseline	neat-freak	-	81	baseline	-	并行子agent优化	dry_run
+2026-06-20T11:43	filebak	neat-freak	81	87	keep	dim4	删除前🔴CHECKPOINT🛑STOP+矛盾记忆停改	dry_run
+2026-06-20T11:43	baseline	storage-analyzer	-	78.8	baseline	-	并行子agent优化	dry_run
+2026-06-20T11:43	filebak	storage-analyzer	78.8	84.2	keep	dim4+dim9	删除前🔴确认+🚫黑名单7条	dry_run
+2026-06-20T11:43	baseline	re-security-perspective	-	76.5	baseline	-	并行子agent优化	dry_run
+2026-06-20T11:43	filebak	re-security-perspective	76.5	88.5	keep	dim3+dim4	授权🛑CHECKPOINT-0+失败if-then表	dry_run
+2026-06-20T11:43	baseline	ai-minds-perspective	-	65.7	baseline	-	并行子agent优化	dry_run
+2026-06-20T11:43	filebak	ai-minds-perspective	65.7	76.9	keep	dim3+dim4+dim9	失败IF/THEN表+🔴检查点+红线6条	dry_run
+2026-06-20T11:43	baseline	lushouhei-writer	-	78	baseline	-	并行子agent优化	dry_run
+2026-06-20T11:43	filebak	lushouhei-writer	78	84	keep	dim3	写作失败分支7类if-then+L4返工上限	dry_run
+2026-06-20T21:43	baseline	crossplatform-master-skill	-	56.7	baseline	-	初始评估	dry_run
+2026-06-20T21:43	filebak	crossplatform-master-skill	56.7	72.0	keep	dim1+dim3+dim4+dim6+dim9	补触发词+if-then速查+🔴支付红线+链接6文件	dry_run
+2026-06-21T00:00	baseline	family-wealth-master-skill	-	39.3	baseline	-	投资skill缺风险红线/检查点;带skill实测反不如裸跑	full_test
+2026-06-21T00:10	e755b09	family-wealth-master-skill	39.3	60.0	keep	dim9+dim4	加风险红线黑名单+三道闸CHECKPOINT+心法非真人定位	dry_run
+2026-06-21T00:15	ef3c81b	family-wealth-master-skill	60.0	63.0	keep	dim1	description补触发词+何时用/不用	dry_run
+2026-06-21T00:25	cc7a8e5	family-wealth-master-skill	63.0	82.6	keep	dim3+dim5	三阶段if-then失败分支+精简至150%上限内;子agent复测9/10	full_test
+2026-06-23T15:04	baseline	rush-purchase-builder	-	71.1	baseline	-	初始评估	full_test
+2026-06-23T15:04	filebak	rush-purchase-builder	71.1	82.7	keep	dim3/4/9相关簇	加失败排查表+3个CHECKPOINT+红线反例清单+收description到1024内	full_test
+2026-07-01T14:16	baseline	metallurgy-cad-master-skill	-	58.4	baseline	-	初始评估	dry_run
+2026-07-01T14:16	filebak	metallurgy-cad-master-skill	58.4	73.2	keep	dim1+dim3+dim4+dim6	补触发词+出图前🔴自检+卡点if-then+链接4文件	dry_run
 2026-09-09T10:18:00Z	028afd9	jiaoyuan	77	94	keep	cluster	Darwin 2.0 HL-1/2/3 upgrade	full_test
