@@ -332,26 +332,28 @@ timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
 
 ---
 
-## 异常处理与降级策略 (Fallback)
+## 异常与边界条件
 
 流程假设环境理想，但实操常遇异常。以下预定义 fallback，保证优化过程不会「一跑就卡住」。
 
-| 触发条件 | 一线修复动作 | 仍失败兜底方案 |
+| 场景 | 触发条件 | 处理动作 |
 |---|---|---|
-| `git rev-parse` 失败 (不在 git 仓库) | 询问用户执行 `git init` | 降级为普通文件备份 `cp SKILL.md.bak` 代替 revert |
-| results.tsv 缺失或损坏 | 新建并写表头行，损坏则先备份 `.bak` | 终止日志记录，但继续优化流程 |
-| `git checkout -b` 失败 (分支存在) | 分支名末尾加 `-2` / `-3` | 切回现有分支并询问继续还是新起 |
-| `git revert` 失败 (冲突/脏树) | 先 `git stash`，重试 | 从上一个 commit 手动读取并覆盖恢复 |
-| MAX_ROUNDS 触顶（默认3） | 展示当前最弱维度问用户是否继续 | 不强制 break，直接收工进入 Phase 3 |
-| 优化后超 150% 体积 | 拒绝提交，回到改进步骤精简内容 | 还原到上一个较小的有效版本 |
-| test-prompts.json 已存在 | 默认复用并展示，问用户选择 | 追加或重写新的 prompt |
-| SKILL.md 找不到 | 跳过该 skill，results.tsv 记 `error` | 继续执行下一个 skill 的优化 |
+| 不在 git 仓库 | `git rev-parse` 失败 | 询问用户：执行 `git init` 或回退到文件备份；用户选后者则 `cp SKILL.md SKILL.md.bak.YYYYMMDD-HHMM` 代替 revert |
+| results.tsv 缺失 | 文件不存在 | 新建并写表头行（9列：含 eval_mode） |
+| results.tsv 损坏 | 列数不匹配 / 非TSV | 备份为 `.bak.YYYYMMDD-HHMM` 后重建，告知用户 |
+| 分支已存在 | `git checkout -b` 失败 | 分支名末尾加 `-2` / `-3`；第3次失败则切回现有分支并询问继续还是新起 |
+| `git revert` 失败 | 冲突 / 工作树脏 | 先 `git stash`，重试；仍失败则从上一个 commit 的 SKILL.md 读出覆盖当前文件手动恢复 |
+| MAX_ROUNDS 触顶（默认3） | 已跑3轮仍有短板 | 不强制 break，展示当前最弱维度问用户「继续加1轮 / 进入Phase 2.5 / 收工」 |
+| 优化后超 150% 体积 | 新文件 > 原 × 1.5 | 拒绝提交，回到改进步骤精简（删冗余/合并重复），再评 |
+| test-prompts.json 已存在 | 文件已在 skill 目录 | 默认复用并展示，问用户「复用 / 重写 / 追加」三选一 |
+| SKILL.md 找不到 | 目录存在但无 SKILL.md | 该 skill 终止，results.tsv 记 `status=error`，继续下一个 |
+| 分数计算规则 | 浮点精度漂移 | 总分保留 1 位小数，改进需严格 > 旧分（不靠四舍五入） |
 
 **原则**：异常先告知用户，再按规则处理；绝不静默跳过或静默失败。
 
 ---
 
-## 🔴 反例与黑名单 (不要做的事)
+## darwin 操作反例黑名单（dim9 应用：darwin 自己优化时不要做的事）
 
 来自本机 results.tsv 早期 40 次 0 revert 的教训 + Judge G/H 自指评估暴露的反模式。每条都是**真实踩过的坑**。
 
