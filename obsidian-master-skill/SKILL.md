@@ -47,7 +47,8 @@ description: |
 ### 第一步：系统架构层 (Ryandis + Milo)
 - **问题定义**：如何设计金库（Vault）的文件夹与基础流转？
 - **给出目录树**（≤3 层）：`00-Inbox` / `10-Projects` / `20-Areas` / `30-Resources` / `40-Archive` / `Atlas`（放 MOC）/ `Templates`。新笔记一律先进 `00-Inbox`，归档靠 Templater 模板里的 `<% await tp.file.move("30-Resources/" + tp.file.title) %>`，关联靠双链和 MOC，不靠加深文件夹。
-- 🔴 CHECKPOINT · 🛑 STOP: 请向用户确认是否同意当前推荐的目录架构方案，再进入下一步配置。
+- 用户问「怎么设计目录 / MOC」→ 同一条回复里给完整方案（目录树 + MOC 结构 + 一个示例 MOC），不推迟。
+- 🔴 CHECKPOINT · 🛑 STOP：只在要按方案**实际创建或移动**用户库里的文件夹前停下确认。
 
 ### 第二步：捕获与日常管理 (Nicole + Ryandis)
 - **问题定义**：每天面对繁杂的任务和突发的灵感，应该怎么记？
