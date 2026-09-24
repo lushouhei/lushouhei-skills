@@ -42,3 +42,5 @@ timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
 2026-09-24T12:10:00Z	ce9a50c	lushouhei-writer	70.0	75.7	keep	放行分支规则(P0效果,d3)	A/B blind paired 2 judges (75.0/76.2 vs 68.7/71.3); keeps user's stance, no invented scenes; drafts thinner	full_test
 2026-09-24T12:50:00Z	3398745	lushouhei-writer	72.3	75.6	keep	工作流(d2)	A/B blind paired 2 judges (75.7/75.4 vs 72.8/71.8); MAX_ROUNDS=3	full_test
 2026-09-24T12:50:00Z	final	lushouhei-writer	62.5	75.0	final	v0 vs v3	Phase3 direct A/B blind paired 2 judges (74.5/75.4 vs 63.5/61.5)	full_test
+2026-09-24T13:30:00Z	4a7c050	obsidian-master-skill	63.5	69.2	keep	R4 用户追加轮:STOP范围(P0效果)	A/B blind paired 2 judges (68.5/69.8 vs 63.0/64.0); P1 now answers MOC design directly	full_test
+2026-09-24T13:30:00Z	4880697	lushouhei-writer	71.9	76.8	keep	R4 用户追加轮:字数+编造禁令(P0效果)	A/B blind paired 2 judges (77.3/76.2 vs 71.8/72.0); drafts now 4000+ chars	full_test
