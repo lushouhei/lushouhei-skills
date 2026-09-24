@@ -24,3 +24,4 @@ timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
 2026-09-24T08:10:00Z	9957faa	creator-master-skill	62.2	69.8	keep	失败模式编码(d3,P0效果)	A/B blind paired 2 judges (70.4/69.2 vs 63.4/61.0); P3 now offers 3 niches + 2 no-face forms; MAX_ROUNDS=3 reached	full_test
 2026-09-24T08:10:00Z	final	creator-master-skill	48.2	69.9	final	v0 vs v3	Phase3 direct A/B blind paired 2 judges (69.5/70.3 vs 49.2/47.1)	full_test
 2026-09-24T08:30:00Z	7d1581c	crossplatform-master-skill	60.7	67.8	keep	效果/误导性指令(P0)	A/B blind paired 2 judges (68.0/67.7 vs 60.1/61.2); P1 now gives directory tree	full_test
+2026-09-24T08:50:00Z	6ef99b7	crossplatform-master-skill	64.0	70.3	keep	工作流(d2)	A/B blind paired 2 judges (68.8/71.8 vs 62.9/65.0); also fixed Vue3 reactivity error in fallback table	full_test
