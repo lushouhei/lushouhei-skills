@@ -46,17 +46,23 @@ description: |
 
 ### 第一步：系统架构层 (Ryandis + Milo)
 - **问题定义**：如何设计金库（Vault）的文件夹与基础流转？
-- **联合处方**：采用混合的 `00-Inbox` -> `IDEA` / `PARA` -> `Zettelkasten` 结构。Ryandis 会提供 Templater 脚本让笔记自动移动归档；Milo 则会在文件夹内指导你不要嵌套过深，用双链替代文件夹树。
+- **给出目录树**（≤3 层）：`00-Inbox` / `10-Projects` / `20-Areas` / `30-Resources` / `40-Archive` / `Atlas`（放 MOC）/ `Templates`。新笔记一律先进 `00-Inbox`，归档靠 Templater 模板里的 `<% await tp.file.move("30-Resources/" + tp.file.title) %>`，关联靠双链和 MOC，不靠加深文件夹。
 - 🔴 CHECKPOINT · 🛑 STOP: 请向用户确认是否同意当前推荐的目录架构方案，再进入下一步配置。
 
 ### 第二步：捕获与日常管理 (Nicole + Ryandis)
 - **问题定义**：每天面对繁杂的任务和突发的灵感，应该怎么记？
-- **联合处方**：建立一个强大的 Daily Note。Ryandis 会帮你配置 QuickAdd，让你只需弹出一个输入框就能把想说的话打入 Inbox；Nicole 会帮你写好 Dataview 代码，让你在 Daily Note 里一眼看到今天所有到期的任务和昨晚记下的闪念。
+- **给出配置**：QuickAdd 建一个 Capture，目标文件写 `00-Inbox/{{DATE:YYYY-MM-DD}}.md`，绑定全局快捷键。Daily Note 模板里放未完成任务汇总：
+  ```dataview
+  TASK
+  WHERE !completed AND due AND due <= date(today)
+  SORT due ASC
+  ```
+  任务日期写成 `📅 2026-09-24` 或 `[due:: 2026-09-24]` 都行，Dataview 原生识别，不需要额外插件。
 - 用户已说明具体需求（如「汇总未完成任务」）→ 直接给方案；只有问「怎么搭日常系统」时，才在方案末尾追问一句最常见的捕获阻力。
 
 ### 第三步：知识提炼与输出 (Nick Milo)
 - **问题定义**：记了成百上千条笔记，如何产生真正的洞见并输出文章？
-- **专属处方**：停止单纯的检索和收集。Milo 会带你进入“意义摩擦（Meaningful Friction）”阶段，教你建立一张专属的 MOC，把孤立的文献笔记转化为带有个人思考的常青笔记，并最终在 MOC 的织网中“涌现”出一篇完整的输出。
+- **给出规则**：同一主题的笔记累积到约 10 篇、找起来开始费劲时，在 `Atlas` 建一张 MOC：分组列出相关笔记的双链，每组下写一句自己的判断；文献笔记用自己的话改写成常青笔记后再挂进 MOC；写文章时按 MOC 的分组顺序拉提纲。深挖方法见 `references/research/nick_milo/01-moc.md`。
 
 ---
 
@@ -66,7 +72,7 @@ description: |
 | :--- | :--- | :--- |
 | Dataview 报错/无数据 | 检查 YAML Frontmatter 格式和标签拼写 | 改用核心搜索功能进行基础过滤 |
 | QuickAdd 脚本执行失败 | 确认 Templater 语法无误并在设置中启用脚本 | 手动应用模板并填充元数据 |
-| 文件夹嵌套过深找不到笔记 | 使用 `Ctrl+O` 快捷搜索文件名或标签 | 用 MOC (Map of Content) 梳理根目录链接 |
+| 文件夹嵌套过深找不到笔记 | `Ctrl+O` 按文件名快速切换；按标签找用搜索栏 `tag:#标签` | 用 MOC (Map of Content) 梳理根目录链接 |
 
 ## 🔴 反例与黑名单 (不要做的事)
 
