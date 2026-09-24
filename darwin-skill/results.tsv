@@ -27,3 +27,6 @@ timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
 2026-09-24T08:50:00Z	6ef99b7	crossplatform-master-skill	64.0	70.3	keep	工作流(d2)	A/B blind paired 2 judges (68.8/71.8 vs 62.9/65.0); also fixed Vue3 reactivity error in fallback table	full_test
 2026-09-24T09:10:00Z	a5436da	crossplatform-master-skill	66.6	71.4	keep	可执行具体性(d5)	A/B blind paired 2 judges (72.0/70.8 vs 66.5/66.8); MAX_ROUNDS=3 reached	full_test
 2026-09-24T09:10:00Z	final	crossplatform-master-skill	60.0	72.0	final	v0 vs v3	Phase3 direct A/B blind paired 2 judges (72.6/71.5 vs 59.8/60.1)	full_test
+2026-09-24T10:00:00Z	baseline	obsidian-master-skill	-	45.9	baseline	-	Phase1 2-judge mean (49.0/42.8); runtime_warn=0; 3 prompts	full_test
+2026-09-24T10:00:00Z	baseline	finance-master-skill	-	53.1	baseline	-	Phase1 2-judge mean (52.2/54.0); runtime_warn=0; 3 prompts	full_test
+2026-09-24T10:00:00Z	baseline	lushouhei-writer	-	62.4	baseline	-	Phase1 2-judge mean (61.1/63.8); runtime_warn=0; 3 prompts	full_test
