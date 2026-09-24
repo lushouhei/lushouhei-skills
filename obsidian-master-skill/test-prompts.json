@@ -1,1 +1,20 @@
-﻿[{"expected":"结合 Nick Milo 等专家的心法，提供 LYT 框架和笔记涌现指导","prompt":"我想用 Obsidian 建立第二大脑，如何设计 MOC 和目录架构？","id":1},{"expected":"提供 Dataview 查询语法、敏捷工作流和自动化插件配置","prompt":"教我怎么用 Dataview 插件写查询来汇总所有未完成任务","id":2}]
+[
+  {
+    "id": 1,
+    "scenario": "典型场景",
+    "prompt": "我想用 Obsidian 建立第二大脑，如何设计 MOC 和目录架构？",
+    "expected": "结合 Nick Milo 等专家的心法，提供 LYT 框架和笔记涌现指导"
+  },
+  {
+    "id": 2,
+    "scenario": "典型场景",
+    "prompt": "教我怎么用 Dataview 插件写查询来汇总所有未完成任务",
+    "expected": "提供 Dataview 查询语法、敏捷工作流和自动化插件配置"
+  },
+  {
+    "id": 3,
+    "scenario": "重构/失败场景",
+    "prompt": "我的 Obsidian 库有 3000 多条笔记，文件夹嵌套了 5 层，装了 40 多个插件，现在打开很慢、Dataview 查询也经常报错，想整体重构但怕把链接搞坏，怎么办？",
+    "expected": "先备份和止损（备份库、停用非必要插件定位卡顿），再给分步迁移方案（压平文件夹到≤3层、用 Obsidian 内置移动保证链接自动更新、Dataview 报错按 YAML 格式排查）；重构目录前停下确认方案"
+  }
+]
