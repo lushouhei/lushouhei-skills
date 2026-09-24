@@ -1,9 +1,10 @@
 ---
 name: obsidian-master-skill
 description: |
-  第二大脑终极建库向导 (Obsidian-Master-Skill)。
-  融合了三位 Obsidian 顶级专家的心法：Nick Milo (LYT 框架与 MOC 思想)、Nicole van der Hoeven (Dataview 数据库与 Agile 敏捷工作流)、以及基于 QuickAdd+Templater 的硬核自动化插件流派 (Ryandis流)。
-  当用户需要建立、重构或自动化管理个人知识库（PKM）时，呼叫此 Skill，将提供从目录架构、插件配置到笔记涌现的一站式高级指导。
+  Obsidian 知识库搭建、重构与自动化指南，融合 Nick Milo（LYT 框架与 MOC）、Nicole van der Hoeven（Dataview 与 Daily Notes）、Ryandis（QuickAdd + Templater 自动化流水线）三种方法。
+  当用户要新建 Obsidian 库、设计文件夹与 MOC、写 Dataview 查询、配置 QuickAdd/Templater、搭 Daily Note、或重构变慢变乱的旧库时使用。
+  触发词：Obsidian、第二大脑、PKM、知识库、MOC、LYT、双链、Dataview、DataviewJS、Templater、QuickAdd、Daily Note、PARA、卡片盒、Zettelkasten、Obsidian-Master-Skill。
+  不要用于：Notion、Logseq 等其他笔记软件的专属操作，或与笔记管理无关的写作任务。
 ---
 
 # Obsidian-Master-Skill: 终极第二大脑建构委员会
@@ -32,19 +33,37 @@ description: |
 
 当你在搭建或优化 Obsidian 时遇到问题，这个委员会将按照以下工作流为您提供联合指导：
 
+### 第零步：分流（先判断，再进对应步骤）
+- **新建库** → 按第一步 → 第二步 → 第三步走。
+- **单点问题**（写某个 Dataview 查询、配某个插件）→ 直接给可复制的代码/配置和排错要点，不走 STOP。
+- **重构已有库**（笔记多、嵌套深、插件多、变慢）→ 按下面的重构流程，每步做完再进下一步：
+  1. 备份：复制整个库文件夹（含 `.obsidian`）或 `git commit`；同步工具（Obsidian Sync/iCloud）先暂停。
+  2. 定位变慢：开「受限模式」关掉全部社区插件对比速度，再按一半一半开启二分定位元凶。
+  3. 🔴 CHECKPOINT · 🛑 STOP：给出目标目录树（≤3 层）和迁移批次，用户确认后才动文件。
+  4. 迁移：设置 → 文件与链接 → 打开「始终更新内部链接」；只在 Obsidian 里移动文件（不要用系统文件管理器），同名文件先改名；每批迁完抽查链接。
+  5. 修查询：Dataview 的 `FROM "文件夹"` 迁移后会失效，改成 `FROM #标签` 或按 frontmatter 字段过滤；报错先查 YAML 缩进与冒号后空格。
+  6. 扫断链：Obsidian 没有内置断链报告，用社区插件 Find orphaned files and broken links 扫一遍。
+
 ### 第一步：系统架构层 (Ryandis + Milo)
 - **问题定义**：如何设计金库（Vault）的文件夹与基础流转？
-- **联合处方**：采用混合的 `00-Inbox` -> `IDEA` / `PARA` -> `Zettelkasten` 结构。Ryandis 会提供 Templater 脚本让笔记自动移动归档；Milo 则会在文件夹内指导你不要嵌套过深，用双链替代文件夹树。
-- 🔴 CHECKPOINT · 🛑 STOP: 请向用户确认是否同意当前推荐的目录架构方案，再进入下一步配置。
+- **给出目录树**（≤3 层）：`00-Inbox` / `10-Projects` / `20-Areas` / `30-Resources` / `40-Archive` / `Atlas`（放 MOC）/ `Templates`。新笔记一律先进 `00-Inbox`，归档靠 Templater 模板里的 `<% await tp.file.move("30-Resources/" + tp.file.title) %>`，关联靠双链和 MOC，不靠加深文件夹。
+- 用户问「怎么设计目录 / MOC」→ 同一条回复里给完整方案（目录树 + MOC 结构 + 一个示例 MOC），不推迟。
+- 🔴 CHECKPOINT · 🛑 STOP：只在要按方案**实际创建或移动**用户库里的文件夹前停下确认。
 
 ### 第二步：捕获与日常管理 (Nicole + Ryandis)
 - **问题定义**：每天面对繁杂的任务和突发的灵感，应该怎么记？
-- **联合处方**：建立一个强大的 Daily Note。Ryandis 会帮你配置 QuickAdd，让你只需弹出一个输入框就能把想说的话打入 Inbox；Nicole 会帮你写好 Dataview 代码，让你在 Daily Note 里一眼看到今天所有到期的任务和昨晚记下的闪念。
-- 🔴 CHECKPOINT · 🛑 STOP: 确认用户日常最常遇到的捕获阻力是什么，然后推荐相应的自动化方案。
+- **给出配置**：QuickAdd 建一个 Capture，目标文件写 `00-Inbox/{{DATE:YYYY-MM-DD}}.md`，绑定全局快捷键。Daily Note 模板里放未完成任务汇总：
+  ```dataview
+  TASK
+  WHERE !completed AND due AND due <= date(today)
+  SORT due ASC
+  ```
+  任务日期写成 `📅 2026-09-24` 或 `[due:: 2026-09-24]` 都行，Dataview 原生识别，不需要额外插件。
+- 用户已说明具体需求（如「汇总未完成任务」）→ 直接给方案；只有问「怎么搭日常系统」时，才在方案末尾追问一句最常见的捕获阻力。
 
 ### 第三步：知识提炼与输出 (Nick Milo)
 - **问题定义**：记了成百上千条笔记，如何产生真正的洞见并输出文章？
-- **专属处方**：停止单纯的检索和收集。Milo 会带你进入“意义摩擦（Meaningful Friction）”阶段，教你建立一张专属的 MOC，把孤立的文献笔记转化为带有个人思考的常青笔记，并最终在 MOC 的织网中“涌现”出一篇完整的输出。
+- **给出规则**：同一主题的笔记累积到约 10 篇、找起来开始费劲时，在 `Atlas` 建一张 MOC：分组列出相关笔记的双链，每组下写一句自己的判断；文献笔记用自己的话改写成常青笔记后再挂进 MOC；写文章时按 MOC 的分组顺序拉提纲。深挖方法见 `references/research/nick_milo/01-moc.md`。
 
 ---
 
@@ -54,7 +73,7 @@ description: |
 | :--- | :--- | :--- |
 | Dataview 报错/无数据 | 检查 YAML Frontmatter 格式和标签拼写 | 改用核心搜索功能进行基础过滤 |
 | QuickAdd 脚本执行失败 | 确认 Templater 语法无误并在设置中启用脚本 | 手动应用模板并填充元数据 |
-| 文件夹嵌套过深找不到笔记 | 使用 `Ctrl+O` 快捷搜索文件名或标签 | 用 MOC (Map of Content) 梳理根目录链接 |
+| 文件夹嵌套过深找不到笔记 | `Ctrl+O` 按文件名快速切换；按标签找用搜索栏 `tag:#标签` | 用 MOC (Map of Content) 梳理根目录链接 |
 
 ## 🔴 反例与黑名单 (不要做的事)
 
