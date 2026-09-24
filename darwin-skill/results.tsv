@@ -33,3 +33,5 @@ timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
 2026-09-24T10:40:00Z	a68eadb	obsidian-master-skill	45.5	57.8	keep	分流+重构流程(P0效果,d2/3/4簇)	A/B blind paired 2 judges (56.3/59.2 vs 44.6/46.4)	full_test
 2026-09-24T10:40:00Z	4ee66fa	finance-master-skill	53.1	62.3	keep	第零步路由+收窄CHECKPOINT(P0效果)	A/B blind paired 2 judges (63.9/60.6 vs 53.1/53.1); judges flagged P3 phone never amortized -> fix in R2	full_test
 2026-09-24T11:00:00Z	6abb978	lushouhei-writer	62.3	73.3	keep	CHECKPOINT放行条件(P0效果,d4)	A/B blind paired 2 judges (74.2/72.5 vs 62.3/62.4); P1/P2 now deliver full drafts	full_test
+2026-09-24T11:30:00Z	03f0918	finance-master-skill	60.8	68.1	keep	可执行具体性(d5)	A/B blind paired 2 judges (66.2/70.0 vs 58.9/62.7); installment amortization fixed	full_test
+2026-09-24T11:30:00Z	b74ab1b	obsidian-master-skill	59.0	60.3	keep	Frontmatter(d1)	A/B blind paired 2 judges (61.8/58.9 vs 60.9/57.2); delta<2 (HL-4 watch)	full_test
