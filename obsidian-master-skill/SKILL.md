@@ -1,9 +1,10 @@
 ---
 name: obsidian-master-skill
 description: |
-  第二大脑终极建库向导 (Obsidian-Master-Skill)。
-  融合了三位 Obsidian 顶级专家的心法：Nick Milo (LYT 框架与 MOC 思想)、Nicole van der Hoeven (Dataview 数据库与 Agile 敏捷工作流)、以及基于 QuickAdd+Templater 的硬核自动化插件流派 (Ryandis流)。
-  当用户需要建立、重构或自动化管理个人知识库（PKM）时，呼叫此 Skill，将提供从目录架构、插件配置到笔记涌现的一站式高级指导。
+  Obsidian 知识库搭建、重构与自动化指南，融合 Nick Milo（LYT 框架与 MOC）、Nicole van der Hoeven（Dataview 与 Daily Notes）、Ryandis（QuickAdd + Templater 自动化流水线）三种方法。
+  当用户要新建 Obsidian 库、设计文件夹与 MOC、写 Dataview 查询、配置 QuickAdd/Templater、搭 Daily Note、或重构变慢变乱的旧库时使用。
+  触发词：Obsidian、第二大脑、PKM、知识库、MOC、LYT、双链、Dataview、DataviewJS、Templater、QuickAdd、Daily Note、PARA、卡片盒、Zettelkasten、Obsidian-Master-Skill。
+  不要用于：Notion、Logseq 等其他笔记软件的专属操作，或与笔记管理无关的写作任务。
 ---
 
 # Obsidian-Master-Skill: 终极第二大脑建构委员会
