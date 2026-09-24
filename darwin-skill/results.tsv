@@ -11,3 +11,7 @@ timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
 2026-07-08T12:00:00Z	auto	family-wealth-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
 2026-07-17T11:49:00Z	auto	cangjie-skill	74	90	keep	cluster	Automated Phase 2	dry_run
 2026-09-09T10:18:00Z	028afd9	jiaoyuan	77	94	keep	cluster	Darwin 2.0 HL-1/2/3 upgrade	full_test
+2026-09-24T05:40:00Z	baseline	feishu-master-skill	-	39.8	baseline	-	Phase1 2-judge mean (40.8/38.8); runtime_warn=0; 3 prompts	full_test
+2026-09-24T05:40:00Z	baseline	creator-master-skill	-	48.1	baseline	-	Phase1 2-judge mean (47.0/49.2); runtime_warn=0; 3 prompts	full_test
+2026-09-24T05:40:00Z	baseline	crossplatform-master-skill	-	57.6	baseline	-	Phase1 2-judge mean (57.9/57.3); runtime_warn=0; 3 prompts	full_test
+2026-09-24T06:00:00Z	1348e2c	feishu-master-skill	43.4	58.9	keep	工作流+检查点(d2/d4簇,P0效果)	A/B blind paired 2 judges (57.3/60.5 vs 42.1/44.7); P2 no longer blocked by STOP	full_test
