@@ -35,3 +35,8 @@ timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
 2026-09-24T11:00:00Z	6abb978	lushouhei-writer	62.3	73.3	keep	CHECKPOINT放行条件(P0效果,d4)	A/B blind paired 2 judges (74.2/72.5 vs 62.3/62.4); P1/P2 now deliver full drafts	full_test
 2026-09-24T11:30:00Z	03f0918	finance-master-skill	60.8	68.1	keep	可执行具体性(d5)	A/B blind paired 2 judges (66.2/70.0 vs 58.9/62.7); installment amortization fixed	full_test
 2026-09-24T11:30:00Z	b74ab1b	obsidian-master-skill	59.0	60.3	keep	Frontmatter(d1)	A/B blind paired 2 judges (61.8/58.9 vs 60.9/57.2); delta<2 (HL-4 watch)	full_test
+2026-09-24T12:10:00Z	1ead852	obsidian-master-skill	58.8	64.0	keep	可执行具体性(d5)	A/B blind paired 2 judges (62.3/65.8 vs 58.6/58.9); side effect: step-1 STOP defers MOC answer in P1; MAX_ROUNDS=3	full_test
+2026-09-24T12:10:00Z	final	obsidian-master-skill	40.0	61.5	final	v0 vs v3	Phase3 direct A/B blind paired 2 judges (59.5/63.5 vs 40.0/40.0)	full_test
+2026-09-24T12:10:00Z	dc1d983	finance-master-skill	65.3	69.4	keep	反例黑名单(d9)	A/B blind paired 2 judges (70.6/68.2 vs 65.6/65.0); MAX_ROUNDS=3	full_test
+2026-09-24T12:10:00Z	final	finance-master-skill	52.1	72.0	final	v0 vs v3	Phase3 direct A/B blind paired 2 judges (71.5/72.5 vs 51.4/52.8)	full_test
+2026-09-24T12:10:00Z	ce9a50c	lushouhei-writer	70.0	75.7	keep	放行分支规则(P0效果,d3)	A/B blind paired 2 judges (75.0/76.2 vs 68.7/71.3); keeps user's stance, no invented scenes; drafts thinner	full_test
