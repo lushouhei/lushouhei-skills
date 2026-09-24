@@ -21,3 +21,5 @@ timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
 2026-09-24T07:30:00Z	5859699	creator-master-skill	49.6	61.6	keep	工作流+检查点(d2/d4簇,P0效果)	re-evaluated after permission fix: A/B blind paired 2 judges (61.9/61.4 vs 49.0/50.2); re-applied via revert-of-revert; note P3 lost 2nd no-face form	full_test
 2026-09-24T07:40:00Z	final	feishu-master-skill	41.3	68.4	final	v0 vs v3	Phase3 direct A/B blind paired 2 judges (68.0/68.9 vs 40.2/42.4)	full_test
 2026-09-24T07:50:00Z	a458849	creator-master-skill	60.6	65.4	keep	Frontmatter(d1)	A/B blind paired 2 judges (64.8/66.0 vs 60.1/61.1)	full_test
+2026-09-24T08:10:00Z	9957faa	creator-master-skill	62.2	69.8	keep	失败模式编码(d3,P0效果)	A/B blind paired 2 judges (70.4/69.2 vs 63.4/61.0); P3 now offers 3 niches + 2 no-face forms; MAX_ROUNDS=3 reached	full_test
+2026-09-24T08:10:00Z	final	creator-master-skill	48.2	69.9	final	v0 vs v3	Phase3 direct A/B blind paired 2 judges (69.5/70.3 vs 49.2/47.1)	full_test
