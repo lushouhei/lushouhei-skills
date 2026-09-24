@@ -1,0 +1,13 @@
+timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
+2026-07-08T12:00:00Z	auto	feishu-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
+2026-07-08T12:00:00Z	auto	fengtang-perspective	70	90	keep	cluster	Automated Phase 2	dry_run
+2026-07-08T12:00:00Z	auto	finance-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
+2026-07-08T12:00:00Z	auto	kaogong-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
+2026-07-08T12:00:00Z	auto	metallurgy-cad-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
+2026-07-08T12:00:00Z	auto	ai-alignment-squad	70	90	keep	cluster	Automated Phase 2	dry_run
+2026-07-08T12:00:00Z	auto	creator-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
+2026-07-08T12:00:00Z	auto	crossplatform-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
+2026-07-08T12:00:00Z	auto	darwin-skill	70	90	keep	cluster	Automated Phase 2	dry_run
+2026-07-08T12:00:00Z	auto	family-wealth-master-skill	70	90	keep	cluster	Automated Phase 2	dry_run
+2026-07-17T11:49:00Z	auto	cangjie-skill	74	90	keep	cluster	Automated Phase 2	dry_run
+2026-09-09T10:18:00Z	028afd9	jiaoyuan	77	94	keep	cluster	Darwin 2.0 HL-1/2/3 upgrade	full_test

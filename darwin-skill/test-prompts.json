@@ -1,0 +1,1 @@
+﻿[{"expected":"执行 Darwin Skill 的完整优化流程，设计提示词、打分并改进","prompt":"帮我评估并优化所有的skills","id":1},{"expected":"读取并展示 results.tsv 文件中的历史优化记录","prompt":"看看 skill 优化历史","id":2}]

@@ -1,0 +1,52 @@
+{
+  "skill": "mao-shijianlun",
+  "version": "0.1.0",
+  "source_book": "毛泽东选集（第一卷） — 毛泽东",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们团队新设计了一套高并发架构，理论论证很严密，但几个资深开发总觉得没底，争论不休。我们该怎么通过低成本实操来验证这个方案是不是纸上谈兵？",
+      "expected_behavior": "应激活 mao-shijianlun，指导用户进行感性数据采集、四步制作法与灰度实操检验闭环",
+      "notes": "典型知行验证与反教条主义场景"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "生产环境突然出现大量偶发报错，Sentry 和 Grafana 里日志成千上万条，大家看的眼花缭乱只能凭直觉瞎猜。怎么用毛选的方法由此及彼、由表及里地把本质问题找出来？",
+      "expected_behavior": "应激活 mao-shijianlun，应用去粗取精、去伪存真、由此及彼、由表及里的四步信息提炼框架",
+      "notes": "明确触发四步制作法关键词"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我们一直严格照搬业界大厂的最佳实践指南，可一落地到我们的小团队就各种报错和水土不服，感觉书本经验不管用了，怎么办？",
+      "expected_behavior": "应激活 mao-shijianlun，分析教条主义陷阱，引导用户从第一手一线真实反馈出发构建认知",
+      "notes": "经典反教条主义与实事求是场景"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "请帮我写一个 Python 函数，用快速排序算法对一个整数列表进行升序排序，并给出时间复杂度推导。",
+      "expected_behavior": "不应激活本 skill，因为这是标准算法实现与形式推导，属于已有明确规范的编码任务",
+      "notes": "纯代码与形式逻辑诱饵"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我们公司目前面临技术负债重、销售业绩差、现金流即将断裂、团队内讧四大危机，千头万绪，资源极其有限，请问我们当前最该集中力量打哪一个主要矛盾？",
+      "expected_behavior": "不应激活 mao-shijianlun，而应激活 mao-maodunlun",
+      "notes": "跨 skill 混淆诱饵：这是系统级战略聚焦与主要矛盾判别，属于兄弟 skill 的职责"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我想阅读《实践论》的全文并摘抄其中的名句发到朋友圈打卡。",
+      "expected_behavior": "不应激活本 skill（或仅给出提示），因为这是文本摘要/书摘需求，cangjie-skill 的产物仅用于真实决策与行动指导，不作书摘玩具",
+      "notes": "书摘/娱乐型边缘诱饵"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "包含 3 条正向场景、2 条严格负向诱饵（含同书兄弟 skill 混淆测试）与 1 条边缘测试。"
+}

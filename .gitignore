@@ -22,3 +22,16 @@ node_modules/
 *.log
 tmp/
 .cache/
+
+# Claude Code local settings (machine-specific permissions)
+.claude/settings.local.json
+
+# Skill backups created by optimizers (e.g. SKILL.md.bak.20260620-1142)
+*.bak.*
+
+# Upstream git history of vendored third-party skills (kept locally only)
+.git-upstream/
+
+# Local env files (may hold API keys)
+.env
+.env.*

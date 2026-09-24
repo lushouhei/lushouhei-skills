@@ -1,0 +1,17 @@
+[
+  {
+    "scenario": "应调用",
+    "prompt": "我们一直沿用的营销策略最近失效了，想换个别人的策略，但又怕水土不服，我该怎么办？",
+    "expected_skill": "jian-lu-bu-zou"
+  },
+  {
+    "scenario": "诱饵测试 (应触发兄弟skill)",
+    "prompt": "为什么我这么努力却总是赚不到钱，是不是社会太不公平了？我该怎么摆脱这种命运？",
+    "expected_skill": "wen-hua-shu-xing"
+  },
+  {
+    "scenario": "不应调用 (边界测试)",
+    "prompt": "帮我看看这块代码哪里写错了。",
+    "expected_skill": null
+  }
+]

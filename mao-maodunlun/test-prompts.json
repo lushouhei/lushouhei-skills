@@ -1,0 +1,52 @@
+{
+  "skill": "mao-maodunlun",
+  "version": "0.1.0",
+  "source_book": "毛泽东选集（第一卷） — 毛泽东",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们团队目前面临技术负债累积、交付逾期、客户续约率下滑、高层战略摇摆等多重问题，千头万绪，大家每天加班救火却越陷越深。请帮我们做一次主要矛盾诊断，告诉我第一刀到底该砍向哪里？",
+      "expected_behavior": "应激活 mao-maodunlun，执行系统矛盾全景扫描、主要矛盾穿透判定与压倒性兵力投放建议",
+      "notes": "典型千头万绪、多矛盾交织的战略聚焦场景"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "作为一家只有 3 个人的独立开发团队，我们在资源极度匮乏、完全处于弱势的情况下，该如何寻找关键杠杆条件，实现以弱胜强和力量对比逆转？",
+      "expected_behavior": "应激活 mao-maodunlun，分析矛盾主要方面、构筑相变催化条件并推动力量对立面转化",
+      "notes": "典型以弱胜强、相变杠杆与主导方面逆转场景"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "公司预算被削减了 60%，老总要求所有部门各砍一部分预算平均分摊，我觉得这种平均主义会搞垮核心业务，怎么用矛盾论的观点向上汇报并提出科学的资源倾斜方案？",
+      "expected_behavior": "应激活 mao-maodunlun，批判平均主义陷阱，强调矛盾不平衡性与资源压倒性倾斜原则",
+      "notes": "反平均主义分配、强调抓住主要矛盾"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我想在 React 页面里添加一个带有动画效果的加载等待菊花图（Loading Spinner），请提供 CSS 代码。",
+      "expected_behavior": "不应激活本 skill，因为这是标准的前端 UI 样式实现，无系统级主要矛盾冲突",
+      "notes": "纯前端 UI 编码诱饵"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我们已经锁定了当前的核心矛盾是数据库连接池泄漏，但面对海量日志毫无头绪，怎么通过‘去粗取精、去伪存真、由此及彼、由表及里’把根本根因找出来？",
+      "expected_behavior": "不应激活 mao-maodunlun，而应激活 mao-shijianlun",
+      "notes": "跨 skill 混淆诱饵：主要矛盾已经锁定，当前进入具体数据制作与因果验证闭环，属于实践论职责"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "请帮我评价一下《矛盾论》在哲学史上的地位以及苏联哲学对毛泽东的影响。",
+      "expected_behavior": "不应激活本 skill（或仅作为知识问答），因为这是学术史与思想史分析，非战略决策执行场景",
+      "notes": "纯学术思想史边缘诱饵"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "包含 3 条正向场景、2 条严格负向诱饵（含同书兄弟 skill 混淆测试）与 1 条边缘测试。"
+}
