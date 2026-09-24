@@ -17,3 +17,4 @@ timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
 2026-09-24T06:00:00Z	1348e2c	feishu-master-skill	43.4	58.9	keep	工作流+检查点(d2/d4簇,P0效果)	A/B blind paired 2 judges (57.3/60.5 vs 42.1/44.7); P2 no longer blocked by STOP	full_test
 2026-09-24T06:20:00Z	a1b22e8	feishu-master-skill	54.8	64.5	keep	可执行具体性(d5)	A/B blind paired 2 judges (63.6/65.5 vs 54.6/55.0); label leak fixed	full_test
 2026-09-24T06:40:00Z	2976555	feishu-master-skill	59.5	65.3	keep	Frontmatter(d1)	A/B blind paired 2 judges (65.0/65.5 vs 59.5/59.5); MAX_ROUNDS=3 reached, stop	full_test
+2026-09-24T07:00:00Z	5859699	creator-master-skill	48.1	-	revert	工作流+检查点(d2/d4簇,P0效果)	executor ran (out_v1) but judge subagents denied by permission classifier; unvalidated -> reverted; creator/crossplatform loop halted	-
