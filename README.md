@@ -22,6 +22,12 @@
 
 把 `<skill-name>` 换成具体的 skill 目录名即可。Agent 会自己 clone 到对应目录，不用你操心路径。
 
+## 仓库结构
+
+- `<skill-name>/`：一个 skill 一个目录，内含 `SKILL.md`，可选 `references/`、`test-prompts.json`、`result-card.png`（Darwin 优化成果卡片）
+- `scripts/`：仓库维护脚本，不是 skill，不会被当成 skill 安装
+  - [`sync-skills.ps1`](./scripts/sync-skills.ps1)：把本仓库最新 master 同步到本地 `~/.claude/skills`（Windows PowerShell）。默认只更新本地已装的 skill，加 `-Install` 顺便安装缺的；本地名字和仓库不同的 skill 在脚本顶部 `$Rename` 登记
+
 ## 其他
 
 - 根目录的 [`CLAUDE.md`](./CLAUDE.md) 是我的个人工作规则，可作为参考。
