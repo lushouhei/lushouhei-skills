@@ -26,7 +26,7 @@
 
 - `<skill-name>/`：一个 skill 一个目录，内含 `SKILL.md`，可选 `references/`、`test-prompts.json`、`result-card.png`（Darwin 优化成果卡片）
 - `scripts/`：仓库维护脚本，不是 skill，不会被当成 skill 安装
-  - [`sync-skills.ps1`](./scripts/sync-skills.ps1)：把本仓库最新 master 同步到本地 `~/.claude/skills`（Windows PowerShell）。默认只更新本地已装的 skill，加 `-Install` 顺便安装缺的；本地名字和仓库不同的 skill 在脚本顶部 `$Rename` 登记
+  - [`sync-skills.ps1`](./scripts/sync-skills.ps1)（Windows PowerShell）/ [`sync-skills.sh`](./scripts/sync-skills.sh)（macOS / Linux）：把本仓库最新 master 同步到本地 `~/.claude/skills`。默认只更新本地已装的 skill，加 `-Install` / `--install` 顺便安装缺的；本地名字和仓库不同的 skill 在脚本顶部登记（ps1 的 `$Rename`、sh 的 `rename_to()`），两个脚本要同步改
 
 ## 其他
 
